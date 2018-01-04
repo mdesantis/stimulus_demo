@@ -1,8 +1,24 @@
 AllCops:
   TargetRubyVersion: 2.4
 
+Metrics/LineLength:
+  Max: 100
+  Exclude:
+    - 'db/migrate/**'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'db/migrate/**'
+
+Style/Documentation:
+  Enabled: false
+
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+Style/MixinUsage:
+  Exclude:
+    - 'bin/**/*'
 
 Style/StderrPuts:
   Enabled: false
