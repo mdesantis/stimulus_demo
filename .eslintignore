@@ -1,0 +1,9 @@
+# Webpack packs
+public/packs
+public/packs-test
+
+# Uploaded files
+storage
+
+# Third party libraries manually added
+vendor
