@@ -1,2 +1,8 @@
 AllCops:
   TargetRubyVersion: 2.4
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/StderrPuts:
+  Enabled: false
