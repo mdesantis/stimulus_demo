@@ -5,9 +5,9 @@ environment.loaders.append('eslint', {
   use: {
     loader: 'eslint-loader',
     options: {
-      failOnError: process.env.NODE_ENV !== 'production'
-    }
-  }
+      failOnError: process.env.NODE_ENV !== 'production',
+    },
+  },
 });
 
 
