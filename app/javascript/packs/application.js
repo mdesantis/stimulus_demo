@@ -13,3 +13,8 @@ import { autoload } from 'stimulus/webpack-helpers';
 const application = Application.start();
 const controllers = require.context('./controllers', true, /\.js$/);
 autoload(controllers, application);
+
+window.App.stimulus = application;
+
+// const chatroomEl = document.getElementById('chatroom');
+// console.log(window.App.stimulus.getControllerForElementAndIdentifier(chatroomEl, 'chatroom'));

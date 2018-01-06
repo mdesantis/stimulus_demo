@@ -1,0 +1,6 @@
+#chatroom.chatroom data={controller: 'chatroom'}
+  .chatroom__messages
+    = render partial: Message.all.order(created_at: :asc)
+  = form_with model: Message.new do |form|
+    = form.text_field :text
+    = form.submit
