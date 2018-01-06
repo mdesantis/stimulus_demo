@@ -1,16 +1,22 @@
 AllCops:
   TargetRubyVersion: 2.4
+  Exclude:
+  - db/schema.rb
+  - node_modules/**/*
 
 Metrics/LineLength:
   Max: 100
   Exclude:
-    - 'db/migrate/**'
+  - 'db/migrate/**'
 
 Metrics/MethodLength:
   Exclude:
-    - 'db/migrate/**'
+  - 'db/migrate/**'
 
 Style/Documentation:
+  Enabled: false
+
+Style/EmptyMethod:
   Enabled: false
 
 Style/FrozenStringLiteralComment:
@@ -18,7 +24,7 @@ Style/FrozenStringLiteralComment:
 
 Style/MixinUsage:
   Exclude:
-    - 'bin/**/*'
+  - 'bin/**/*'
 
 Style/StderrPuts:
   Enabled: false
