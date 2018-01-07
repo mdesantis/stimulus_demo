@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   def create
-    @message = Message.new(message_params)
+    @message = Message.new(message_params.merge(author_ip: request.remote_ip))
 
     if @message.save
       render status: :created

@@ -3,4 +3,6 @@
 // });
 
 const chatroomEl = document.getElementById('chatroom');
-console.log('asd', App.stimulus.getControllerForElementAndIdentifier(chatroomEl, 'chatroom'));
+
+App.stimulus.getControllerForElementAndIdentifier(chatroomEl, 'chatroom')
+  .createMessage(<%= @message.to_json.html_safe %>);

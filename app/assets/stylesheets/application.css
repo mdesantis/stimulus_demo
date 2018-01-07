@@ -17,3 +17,7 @@
 .chatroom__messages {
   overflow-y: auto;
 }
+
+.chatroom__message_author_ip {
+  font-weight: bold;
+}
