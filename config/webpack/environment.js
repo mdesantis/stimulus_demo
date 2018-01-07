@@ -10,5 +10,4 @@ environment.loaders.append('eslint', {
   },
 });
 
-
 module.exports = environment;
