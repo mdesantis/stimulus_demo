@@ -4,7 +4,7 @@
   "dependencies": {
     "@rails/webpacker": "^3.2.1",
     "coffeescript": "1.12.7",
-    "stimulus": "^0.9.0"
+    "stimulus": "^1.0.1"
   },
   "devDependencies": {
     "eslint": "^4.14.0",
