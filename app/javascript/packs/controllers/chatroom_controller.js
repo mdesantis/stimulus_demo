@@ -1,4 +1,4 @@
-import { Controller } from 'stimulus';
+import { Controller } from 'stimulus'
 
 export default class extends Controller {
   // connect() {
@@ -6,6 +6,6 @@ export default class extends Controller {
   // }
 
   createMessage(message) {
-    console.log('createMessage', message, this.element);
+    console.log('createMessage', message, this.element)
   }
 }

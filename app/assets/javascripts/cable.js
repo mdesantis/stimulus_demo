@@ -8,7 +8,7 @@
 
 (function createActionCableConsumer() {
   // eslint-disable-next-line no-unused-expressions
-  this.App || (this.App = {});
+  this.App || (this.App = {})
 
-  this.App.cable = ActionCable.createConsumer();
-}).call(this);
+  this.App.cable = ActionCable.createConsumer()
+}).call(this)

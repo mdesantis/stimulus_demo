@@ -1,4 +1,4 @@
-const { environment } = require('@rails/webpacker');
+const { environment } = require('@rails/webpacker')
 
 environment.loaders.append('eslint', {
   test: /\.js$/,
@@ -8,6 +8,6 @@ environment.loaders.append('eslint', {
       failOnError: process.env.NODE_ENV !== 'production',
     },
   },
-});
+})
 
-module.exports = environment;
+module.exports = environment

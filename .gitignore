@@ -21,7 +21,6 @@
 /storage/*
 
 /node_modules
-/yarn-error.log
 
 /public/assets
 .byebug_history
@@ -32,4 +31,8 @@
 # Webpack packs
 /public/packs
 /public/packs-test
-/node_modules
+
+# Yarn files
+yarn-debug.log*
+yarn-error.log*
+.yarn-integrity

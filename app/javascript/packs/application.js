@@ -7,14 +7,14 @@
 // layout file, like app/views/layouts/application.html.erb
 
 
-import { Application } from 'stimulus';
-import { autoload } from 'stimulus/webpack-helpers';
+import { Application } from 'stimulus'
+import { autoload } from 'stimulus/webpack-helpers'
 
-const application = Application.start();
-const controllers = require.context('./controllers', true, /\.js$/);
-autoload(controllers, application);
+const application = Application.start()
+const controllers = require.context('./controllers', true, /\.js$/)
+autoload(controllers, application)
 
-window.App.stimulus = application;
+window.App.stimulus = application
 
 // const chatroomEl = document.getElementById('chatroom');
 // console.log(window.App.stimulus.getControllerForElementAndIdentifier(chatroomEl, 'chatroom'));
