@@ -9,18 +9,13 @@
 import { Application } from 'stimulus'
 import { definitionsFromContext } from 'stimulus/webpack-helpers'
 
-const application = Application.start()
-const context = require.context('./controllers', true, /\.js$/)
-application.load(definitionsFromContext(context))
+window.addEventListener('DOMContentLoaded', () => {
+  const application = Application.start()
+  const context = require.context('./controllers', true, /\.js$/)
+  application.load(definitionsFromContext(context))
 
-// import { Application } from 'stimulus'
-// import { autoload } from 'stimulus/webpack-helpers'
+  window.App.stimulus = application
 
-// const application = Application.start()
-// const controllers = require.context('./controllers', true, /\.js$/)
-// autoload(controllers, application)
-
-// window.App.stimulus = application
-
-// const chatroomEl = document.getElementById('chatroom');
-// console.log(window.App.stimulus.getControllerForElementAndIdentifier(chatroomEl, 'chatroom'));
+  const chatroomEl = document.getElementById('chatroom')
+  console.log(window.App.stimulus.getControllerForElementAndIdentifier(chatroomEl, 'chatroom'))
+})
