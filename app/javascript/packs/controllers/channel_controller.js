@@ -7,5 +7,6 @@ export default class extends Controller {
 
   createMessage(message) {
     console.log('createMessage', message, this.element)
+    document.getElementById('channel__messages').insertAdjacentHTML('beforeend', message)
   }
 }

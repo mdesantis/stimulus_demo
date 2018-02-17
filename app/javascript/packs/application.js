@@ -14,8 +14,5 @@ window.addEventListener('DOMContentLoaded', () => {
   const context = require.context('./controllers', true, /\.js$/)
   application.load(definitionsFromContext(context))
 
-  window.App.stimulus = application
-
-  const channelEl = document.getElementById('channel')
-  console.log(window.App.stimulus.getControllerForElementAndIdentifier(channelEl, 'channel'))
+  App.stimulus = application
 })
