@@ -1,0 +1,32 @@
+exclude:
+- node_modules/**/*
+
+# ---
+# linters:
+#   ColorKeyword:
+#     enabled: false
+#   ColorVariable:
+#     enabled: false
+#   Comment:
+#     enabled: false
+#   IdSelector:
+#     enabled: false
+#   ImportPath:
+#     enabled: false
+#   Indentation:
+#     enabled: false
+#   MergeableSelector:
+#     enabled: false
+#   NameFormat:
+#     enabled: false
+#   PropertySortOrder:
+#     enabled: false
+#   SpaceAfterPropertyColon:
+#     enabled: false
+#   SpaceBeforeBrace:
+#     enabled: false
+#   StringQuotes:
+#     enabled: false
+#   TrailingSemicolon:
+#     enabled: false
+#
