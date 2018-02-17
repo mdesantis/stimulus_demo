@@ -1,8 +1,8 @@
-// App.stimulus.connectedControllersByIdentifier('chatroom').forEach(v => {
+// App.stimulus.connectedControllersByIdentifier('channel').forEach(v => {
 //   v.createMessage(<%= @message.text.to_json.html_safe %>);
 // });
 
-const chatroomEl = document.getElementById('chatroom');
+const channelEl = document.getElementById('channel');
 
-App.stimulus.getControllerForElementAndIdentifier(chatroomEl, 'chatroom')
+App.stimulus.getControllerForElementAndIdentifier(channelEl, 'channel')
   .createMessage(<%= @message.to_json.html_safe %>);

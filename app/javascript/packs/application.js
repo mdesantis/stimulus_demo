@@ -16,6 +16,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
   window.App.stimulus = application
 
-  const chatroomEl = document.getElementById('chatroom')
-  console.log(window.App.stimulus.getControllerForElementAndIdentifier(chatroomEl, 'chatroom'))
+  const channelEl = document.getElementById('channel')
+  console.log(window.App.stimulus.getControllerForElementAndIdentifier(channelEl, 'channel'))
 })

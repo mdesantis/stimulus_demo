@@ -14,10 +14,10 @@
  *= require_self
  */
 
-.chatroom__messages {
+.channel__messages {
   overflow-y: auto;
 }
 
-.chatroom__message_author_ip {
+.channel__message_author_ip {
   font-weight: bold;
 }

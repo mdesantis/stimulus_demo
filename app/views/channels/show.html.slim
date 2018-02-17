@@ -1,7 +1,7 @@
-#chatroom.chatroom data={controller: 'chatroom'}
-  template#template_chatroom_message
+#channel.channel data={controller: 'channel'}
+  template#template_channel_message
     = render Message.new
-  .chatroom__messages
+  .channel__messages
     = render Message.all.order(created_at: :asc)
   = form_with model: Message.new do |form|
     = form.text_field :text
