@@ -1,6 +1,6 @@
 #channel.channel data={controller: 'channel'}
   #channel__messages.channel__messages
     = render Message.all.order(created_at: :asc)
-  = form_with model: Message.new do |form|
+  = form_with model: Message.new, class: 'channel-message-form' do |form|
     = form.text_field :text
     = form.submit
