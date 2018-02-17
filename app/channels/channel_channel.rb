@@ -2,6 +2,7 @@
 class ChannelChannel < ApplicationCable::Channel
   def subscribed
     # stream_from "some_channel"
+    stream_from 'channel:message_created'
   end
 
   def unsubscribed
