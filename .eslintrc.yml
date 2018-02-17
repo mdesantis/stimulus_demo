@@ -3,19 +3,21 @@ env:
 extends: airbnb-base
 overrides:
 - files:
-  - app/assets/javascripts/*.js
-  - app/javascript/packs/*.js
-  env:
-    browser: true
-- files:
-  - app/assets/javascripts/cable.js
-  globals:
-    ActionCable: false
-- files:
   - config/webpack/*.js
   env:
     commonjs: true
     node: true
+- files:
+  - app/assets/javascripts/**/*.js
+  - app/javascript/packs/**/*.js
+  env:
+    browser: true
+  globals:
+    App: false
+- files:
+  - app/assets/javascripts/cable.js
+  globals:
+    ActionCable: false
 parserOptions:
   sourceType: module
 rules:
@@ -25,6 +27,10 @@ rules:
   linebreak-style:
   - error
   - unix
+  no-unused-vars:
+  - error
+  -
+    argsIgnorePattern: ^_
   quotes:
   - error
   - single
