@@ -12,7 +12,7 @@ App.channel = App.cable.subscriptions.create('ChannelChannel', {
   // Called when there's incoming data on the websocket for this channel
   received(data) {
     console.log('ChannelChannel received', data)
-    const channelEl = document.getElementById('channel')
-    App.stimulus.getControllerForElementAndIdentifier(channelEl, 'channel').createMessage(data.message)
+    const event = new CustomEvent('cable:channel:messagecreated', { detail: data })
+    document.dispatchEvent(event)
   },
 })
