@@ -4,6 +4,7 @@
   "dependencies": {
     "@rails/webpacker": "^3.2.2",
     "coffeescript": "1.12.7",
+    "normalize.css": "^8.0.0",
     "stimulus": "^1.0.1"
   },
   "devDependencies": {
