@@ -1,5 +1,11 @@
 @import normalize.css/normalize.css
 
+=clearfix
+  &::after
+    display: table
+    clear: both
+    content: ' '
+
 .channel
   display: flex
   flex-direction: column
@@ -10,14 +16,20 @@
   flex-direction: column
   height: 100%
   overflow-y: auto
-  width: 100%
 
 .channel-message
   &:first-child
     margin-top: auto
 
+.channel-message-header
+  +clearfix
+
 .channel-message-author-ip
+  float: left
   font-weight: bold
+
+.channel-message-actions
+  float: right
 
 .channel-message-form
   align-self: flex-end
