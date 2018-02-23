@@ -9,6 +9,12 @@ class MessagesController < ApplicationController
     end
   end
 
+  def destroy
+    Message.find(params[:id]).destroy
+
+    head :no_content
+  end
+
   private
 
   # Never trust parameters from the scary internet, only allow the white list through.
