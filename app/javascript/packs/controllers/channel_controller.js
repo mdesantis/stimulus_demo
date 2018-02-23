@@ -12,6 +12,6 @@ export default class extends Controller {
     console.log('createMessage', event)
     // const message = event.detail.message
     const { message } = event.detail
-    document.getElementById('channel__messages').insertAdjacentHTML('beforeend', message)
+    document.getElementById('channel-messages').insertAdjacentHTML('beforeend', message)
   }
 }
