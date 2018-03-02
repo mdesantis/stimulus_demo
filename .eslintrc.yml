@@ -18,6 +18,7 @@ overrides:
   - app/assets/javascripts/cable.js
   globals:
     ActionCable: false
+parser: babel-eslint
 parserOptions:
   sourceType: module
 rules:
@@ -41,3 +42,4 @@ rules:
   semi:
   - error
   - never
+  strict: 0
