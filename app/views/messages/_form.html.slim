@@ -1,0 +1,5 @@
+= form_with model: Message.new,
+            class: 'channel-message-form',
+            data: { controller: 'message-form' } do |form|
+  = form.text_area :text
+  = form.submit

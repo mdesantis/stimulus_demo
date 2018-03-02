@@ -1,6 +1,4 @@
-#channel.channel data={controller: 'channel'}
-  #channel-messages.channel-messages
+.channel
+  #channel-messages.channel-messages data={controller: 'channel-messages'}
     = render Message.all.order(created_at: :asc)
-  = form_with model: Message.new, class: 'channel-message-form' do |form|
-    = form.text_field :text
-    = form.submit
+  = render 'messages/form'
