@@ -14,6 +14,7 @@ overrides:
     browser: true
   globals:
     App: false
+    Rails: false
 - files:
   - app/assets/javascripts/cable.js
   globals:
@@ -22,6 +23,9 @@ parser: babel-eslint
 parserOptions:
   sourceType: module
 rules:
+  eqeqeq:
+    - error
+    - always
   indent:
   - error
   - 2
