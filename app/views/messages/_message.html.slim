@@ -3,4 +3,4 @@
     .channel-message-author-ip = message.author_ip
     .channel-message-actions
       = link_to '[×]', message, method: :delete, remote: true, data: { confirm: 'Are you sure?' }
-  .channel-message-text = message.text
+  = simple_format message.text, { class: 'channel-message-text' }, wrapper_tag: :div

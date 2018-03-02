@@ -1,10 +1,15 @@
 @import normalize.css/normalize.css
 
+$channel-message-form-height: 3em
+
 =clearfix
   &::after
     display: table
     clear: both
     content: ' '
+
+*
+  box-sizing: border-box
 
 .channel
   display: flex
@@ -14,7 +19,7 @@
 .channel-messages
   display: flex
   flex-direction: column
-  height: 100%
+  height: calc(100% - #{$channel-message-form-height})
   overflow-y: auto
 
 .channel-message
@@ -34,7 +39,10 @@
 .channel-message-form
   align-self: flex-end
   width: 100%
+  height: $channel-message-form-height
+  // overflow-y: auto
 
 .channel-message-form-textarea
-  box-sizing: border-box
+  height: 100%
+  resize: none
   width: 100%
