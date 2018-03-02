@@ -9,7 +9,7 @@ overrides:
     node: true
 - files:
   - app/assets/javascripts/**/*.js
-  - app/javascript/packs/**/*.js
+  - app/javascript/**/*.js
   env:
     browser: true
   globals:
