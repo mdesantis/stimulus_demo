@@ -1,12 +1,21 @@
 @import normalize.css/normalize.css
 
-$channel-message-form-height: 3em
+$channel-message-form-height: 50px
+$textarea-border-width: 1px !default
+$textarea-padding: 2px !default
 
 =clearfix
   &::after
     display: table
     clear: both
     content: ' '
+
+// Fixes textarea size bug on Chrome when textarea's height is 100%: content-box property is ignored causing textarea to
+// overflow container's height
+=textarea-100-percent-height($padding: $textarea-padding, $border-width: $textarea-border-width)
+  border-width: $border-width
+  height: calc(100% - #{$border-width+$padding})
+  padding: $padding
 
 *
   box-sizing: border-box
@@ -40,9 +49,8 @@ $channel-message-form-height: 3em
   align-self: flex-end
   width: 100%
   height: $channel-message-form-height
-  // overflow-y: auto
 
 .channel-message-form-textarea
-  height: 100%
+  +textarea-100-percent-height
   resize: none
   width: 100%
