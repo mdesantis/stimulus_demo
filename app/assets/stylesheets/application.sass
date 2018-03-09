@@ -6,9 +6,9 @@ $textarea-padding: 2px !default
 
 =clearfix
   &::after
-    display: table
     clear: both
     content: ' '
+    display: table
 
 // Fixes textarea size bug on Chrome when textarea's height is 100%: content-box property is ignored causing textarea to
 // overflow container's height
@@ -48,8 +48,8 @@ $textarea-padding: 2px !default
 
 .channel-message-form
   align-self: flex-end
-  width: 100%
   height: $channel-message-form-height
+  width: 100%
 
 .channel-message-form-textarea
   +textarea-100-percent-height
