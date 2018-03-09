@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resource :channel, only: :show
   resources :messages, only: %i[create destroy]
   resource :user_session
-  resources :users, only: %i[new create]
+  resources :users, only: %i[index new create]
 end

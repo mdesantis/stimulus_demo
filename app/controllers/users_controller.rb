@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def index
+    redirect_to new_user_path
+  end
+
   def new
     @user = User.new
   end
@@ -7,7 +11,8 @@ class UsersController < ApplicationController
     @user = User.new user_params
 
     if @user.save
-      redirect_to @cat, notice: 'Cat was successfully created.'
+      auto_login(@user)
+      redirect_to channel_path
     else
       render :new
     end
