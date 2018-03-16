@@ -5,14 +5,7 @@ p
 h2 Form di registrazione
 
 = form_with model: @user, local: true do |form|
-  - if @user.errors.any?
-    div
-      h3
-        => pluralize(@user.errors.count, 'error')
-        | prohibited this record from being saved:
-      ul
-        - @user.errors.full_messages.each do |message|
-          li = message
+  = render form.errors
 
   div
     = form.label :email

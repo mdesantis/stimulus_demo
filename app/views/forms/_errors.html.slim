@@ -1,0 +1,10 @@
+- record = errors.record
+
+- if record.errors.any?
+  div
+    h3
+      => pluralize(record.errors.count, 'error')
+      | prohibited this record from being saved:
+    ul
+      - record.errors.full_messages.each do |message|
+        li = message
