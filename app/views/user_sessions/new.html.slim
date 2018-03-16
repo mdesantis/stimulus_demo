@@ -1,10 +1,16 @@
-h1 Stimulus Demo
-
 p
 | Se non ti sei già registrato su questo sito registrati
 =< link_to 'qui', new_user_path
 
-p Se altrimenti ti sei già registrato loggati:
-p
-  strong< TODO
-  | : form di registrazione
+h2 Form di login
+
+= form_with model: @user, url: user_session_path, local: true do |form|
+  div
+    = form.label :email
+    = form.text_field :email
+  div
+    = form.label :password
+    = form.password_field :password
+
+  div
+    = form.submit

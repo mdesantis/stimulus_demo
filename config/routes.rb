@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   resource :channel, only: :show
   resources :messages, only: %i[create destroy]
-  resource :user_session
+  resource :user_session, only: %i[new create show destroy]
   resources :users, only: %i[index new create]
 end

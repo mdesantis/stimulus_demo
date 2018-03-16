@@ -1,4 +1,6 @@
 .channel
+  div
+    = link_to 'Log out', user_session_path, method: :delete
   #channel-messages.channel-messages data={controller: 'channel-messages'}
     = render Message.all.order(created_at: :asc)
   = render 'messages/form'

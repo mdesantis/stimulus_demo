@@ -8,5 +8,5 @@ class User < ApplicationRecord
   validates_uniqueness_of :username, :email, case_sensitive: false
   # validates_presence_of   :password
   validates_length_of     :password,
-                          minimum: 4, allow_nil: true, allow_blank: true, if: -> { new_record? || password_changed? }
+                          minimum: 4, allow_nil: true, allow_blank: true, if: -> { new_record? || password }
 end

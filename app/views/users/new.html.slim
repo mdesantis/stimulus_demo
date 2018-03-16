@@ -1,9 +1,13 @@
-h1 Form di registrazione
+p
+| Se ti sei già registrato su questo sito loggati
+=< link_to 'qui', new_user_session_path
+
+h2 Form di registrazione
 
 = form_with model: @user, local: true do |form|
   - if @user.errors.any?
     div
-      h2
+      h3
         => pluralize(@user.errors.count, 'error')
         | prohibited this record from being saved:
       ul
