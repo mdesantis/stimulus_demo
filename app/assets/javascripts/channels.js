@@ -14,3 +14,4 @@
 //= require activestorage
 //= require turbolinks
 //= require utils/app
+//= require ./cable/cable

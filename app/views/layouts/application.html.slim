@@ -1,6 +1,8 @@
 doctype html
 html
-  = render 'layouts/shared/head'
+  head
+    = render 'layouts/shared/head'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
     h1 Stimulus Demo
 

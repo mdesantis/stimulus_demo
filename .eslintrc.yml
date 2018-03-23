@@ -16,7 +16,7 @@ overrides:
     App: false
     Rails: false
 - files:
-  - app/assets/javascripts/cable.js
+  - app/assets/javascripts/cable/cable.js
   globals:
     ActionCable: false
 parser: babel-eslint

@@ -32,6 +32,7 @@ module Authentication
   def sign_out
     return unless signed_in?
 
+    ActionCable.server.disconnect current_user: @current_user
     @current_user = nil
     reset_session
   end

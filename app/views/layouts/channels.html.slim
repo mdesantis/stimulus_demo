@@ -1,6 +1,9 @@
 doctype html
 html
-  = render 'layouts/shared/head'
+  head
+    = render 'layouts/shared/head'
+    = javascript_include_tag 'channels', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag    'channels'
   body
     .channel
       = render 'layouts/channels/current_user_header'
