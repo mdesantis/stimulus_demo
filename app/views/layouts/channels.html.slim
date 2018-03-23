@@ -2,4 +2,5 @@ doctype html
 html
   = render 'layouts/shared/head'
   body
-    = yield
+    .channel
+      = render 'layouts/channels/current_user_header'

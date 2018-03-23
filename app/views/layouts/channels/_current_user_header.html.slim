@@ -1,0 +1,6 @@
+.current-user-header
+  | Sei loggato come
+  b< = current_user.username
+  | .
+  =< link_to 'Log out', user_session_path, method: :delete
+= yield
