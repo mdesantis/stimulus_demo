@@ -1,6 +1,6 @@
 .channel-message data={'message-id': message.id}
   .channel-message-header
-    .channel-message-author-ip = message.author_ip
+    .channel-message-author-username = message.author_username
     .channel-message-actions
       = link_to '[×]', message, method: :delete, remote: true, data: { confirm: 'Are you sure?' }
   = simple_format message.text, { class: 'channel-message-text' }, wrapper_tag: :div

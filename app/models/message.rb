@@ -1,4 +1,8 @@
 class Message < ApplicationRecord
+  belongs_to :author, class_name: 'User'
+
+  delegate :username, to: :author, prefix: true
+
   validates_presence_of :text
 
   after_commit :perform_message_created_job, on: :create

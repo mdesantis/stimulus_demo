@@ -1,6 +1,8 @@
 class MessagesController < ApplicationController
+  before_action :require_sign_in
+
   def create
-    @message = Message.new(message_params.merge(author_ip: request.remote_ip))
+    @message = Message.new(message_params.merge(author: current_user))
 
     if @message.save
       render status: :created

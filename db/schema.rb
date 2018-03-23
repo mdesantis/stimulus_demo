@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_03_09_102546) do
+ActiveRecord::Schema.define(version: 2018_03_16_172931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -41,7 +41,8 @@ ActiveRecord::Schema.define(version: 2018_03_09_102546) do
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.cidr "author_ip"
+    t.bigint "author_id"
+    t.index ["author_id"], name: "index_messages_on_author_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -54,4 +55,5 @@ ActiveRecord::Schema.define(version: 2018_03_09_102546) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "messages", "users", column: "author_id"
 end
