@@ -2,8 +2,11 @@ doctype html
 html
   head
     = render 'layouts/shared/head'
+    = stylesheet_link_tag    'channels', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'channels', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag    'channels'
   body
-    .channel
-      = render 'layouts/channels/current_user_header'
+    .client
+      .sidebar
+      .channel
+        = render 'layouts/channels/current_user_header'
