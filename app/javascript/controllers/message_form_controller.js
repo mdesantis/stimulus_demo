@@ -1,6 +1,6 @@
-import BaseController from '../packs/base_controller'
+import ApplicationController from './application_controller'
 
-export default class extends BaseController {
+export default class extends ApplicationController {
   connect() {
     this.addEventListener(this.element, 'ajax:success', this.ajaxSuccess)
     this.addEventListener(this.textarea(), 'keyup', this.submitFormOnEnter)

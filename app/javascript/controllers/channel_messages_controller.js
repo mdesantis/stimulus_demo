@@ -1,6 +1,6 @@
-import BaseController from '../packs/base_controller'
+import ApplicationController from './application_controller'
 
-export default class extends BaseController {
+export default class extends ApplicationController {
   static MESSAGE_EVENTS = ['create', 'destroy']
 
   connect() {

@@ -1,5 +1,5 @@
 import { Controller } from 'stimulus'
-import eventListenersMixin from './event_listeners_mixin'
+import eventListenersMixin from './mixins/event_listeners'
 
 export default class extends eventListenersMixin(Controller) {
 
