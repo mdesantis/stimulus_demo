@@ -1,9 +1,11 @@
-.wf-loading *
-  opacity: 0
-  visibility: hidden
+.wf-loading
+  body
+    opacity: 0
+    visibility: hidden
 
-.wf-active *,
-.wf-inactive *
-  opacity: 1
-  transition: visibility 0s linear 0s, opacity 150ms
-  visibility: inherit
+.wf-active,
+.wf-inactive
+  body
+    opacity: 1
+    transition: visibility 0s linear 0s, opacity 200ms
+    visibility: inherit
