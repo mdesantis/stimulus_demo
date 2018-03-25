@@ -1,1 +1,9 @@
-@import 'https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i'
+.wf-loading *
+  opacity: 0
+  visibility: hidden
+
+.wf-active *,
+.wf-inactive *
+  opacity: 1
+  transition: visibility 0s linear 0s, opacity 150ms
+  visibility: inherit
