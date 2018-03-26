@@ -50,6 +50,10 @@ module Authentication
     redirect_to new_user_session_path
   end
 
+  def redirect_if_signed_in
+    redirect_to after_sign_in_path if signed_in?
+  end
+
   private
 
   # When authenticating we need to reset session id in order to prevent session fixation attacks

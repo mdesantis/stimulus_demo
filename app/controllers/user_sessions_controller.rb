@@ -1,11 +1,12 @@
 class UserSessionsController < ApplicationController
+  before_action :redirect_if_signed_in, only: %i[new show]
   def new
     @user = User.new
   end
 
   def create
     if sign_in sign_in_params[:email], sign_in_params[:password]
-      redirect_to channel_path
+      redirect_to after_sign_in_path
     else
       @user = User.new sign_in_params
       flash.now.alert = 'Email o password errate. Ritenta'

@@ -4,7 +4,7 @@ p
 
 h2 Form di login
 
-= form_with model: @user, url: user_session_path, local: true do |form|
+= form_with model: @user, url: create_user_session_path, local: true do |form|
   div
     = form.label :email
     = form.text_field :email
