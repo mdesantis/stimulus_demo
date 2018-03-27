@@ -1,14 +1,13 @@
 module StimulusDemo
   class FormBuilder
-    class Errors
-      attr_accessor :form
+    class Errors < DelegateClass(ActiveModel::Errors)
+      attr_reader :form, :record
 
       def initialize(form)
-        @form = form
-      end
+        @form   = form
+        @record = form.object
 
-      def record
-        form.object
+        super @record.errors
       end
 
       def to_partial_path
