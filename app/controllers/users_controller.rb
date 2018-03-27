@@ -1,8 +1,4 @@
 class UsersController < ApplicationController
-  def index
-    redirect_to new_user_path
-  end
-
   def new
     @user = User.new
   end
@@ -12,7 +8,7 @@ class UsersController < ApplicationController
 
     if @user.save
       auto_sign_in @user
-      redirect_to channel_path
+      redirect_to after_sign_in_path
     else
       render :new
     end
