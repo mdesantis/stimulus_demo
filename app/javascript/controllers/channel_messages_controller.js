@@ -6,7 +6,7 @@ export default class extends ApplicationController {
   connect() {
     this.constructor.MESSAGE_EVENTS.forEach((eventName) => {
       const listener = this[`${eventName}Message`]
-      this.addEventListener(document, `cable:channel:messages:${eventName}`, listener)
+      this.addEventListener(document, `cable:client:messages:${eventName}`, listener)
     })
   }
 

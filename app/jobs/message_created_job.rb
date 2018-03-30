@@ -3,9 +3,9 @@ class MessageCreatedJob < ApplicationJob
 
   def perform(message)
     ActionCable.server.broadcast(
-      'channel:messages',
+      'client:messages',
       event: :create,
-      detail: { message: MessagesController.render(message) }
+      detail: { message: Client::MessagesController.render(message) }
     )
   end
 end

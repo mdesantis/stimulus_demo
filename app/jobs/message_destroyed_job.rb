@@ -3,7 +3,7 @@ class MessageDestroyedJob < ApplicationJob
 
   def perform(message)
     ActionCable.server.broadcast(
-      'channel:messages',
+      'client:messages',
       event: :destroy,
       detail: { messageId: message.id }
     )
