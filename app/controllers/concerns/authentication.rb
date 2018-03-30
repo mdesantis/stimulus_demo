@@ -47,7 +47,7 @@ module Authentication
   end
 
   def not_authenticated
-    redirect_to new_user_session_path
+    redirect_to user_session_path
   end
 
   def redirect_if_signed_in

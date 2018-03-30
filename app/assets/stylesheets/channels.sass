@@ -1,6 +1,11 @@
 @import './shared/all'
 
+$text-color: #2C2D30
+$link-color: #0576B9
 $sidebar-background-color: #4D394B
+$sidebar-text-color: #CAC4C9
+$sidebar-link-color: $sidebar-text-color
+$profile-name-text-color: #FFF
 $channel-message-form-height: 50px
 $textarea-border-width: 1px !default
 $textarea-padding: 2px !default
@@ -20,11 +25,32 @@ $textarea-padding: 2px !default
 
 
 .client
+  color: $text-color
   display: flex
+
+  a
+    &:link,
+    &:visited
+      color: $link-color
+      text-decoration: none
+
+    &:hover
+      text-decoration: underline
 
 .sidebar
   background-color: $sidebar-background-color
+  color: $sidebar-text-color
   width: 220px
+
+  a
+    &:link,
+    &:visited
+      color: $sidebar-link-color
+      text-decoration: underline
+
+  .profile-name
+    color: $profile-name-text-color
+    font-weight: bold
 
 .channel
   display: flex
