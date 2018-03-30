@@ -82,4 +82,4 @@ production:
   <<: *default
   database: stimulus_demo_production
   username: stimulus_demo
-  password: <%= ENV['stimulus_demo_DATABASE_PASSWORD'] %>
+  password: <%= ENV['STIMULUS_DEMO_DATABASE_PASSWORD'] %>
