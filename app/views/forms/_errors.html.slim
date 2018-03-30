@@ -1,10 +1,9 @@
-- record = errors.record
-
-- if record.errors.any?
+- if errors.any?
   div
-    h3
-      => pluralize(record.errors.count, 'error')
-      | prohibited this record from being saved:
+    h3 Oops! Something went wrong with your submission:
     ul
-      - record.errors.full_messages.each do |message|
+      - errors.full_messages.each do |message|
         li = message
+
+  p
+    b Please fix the errors above and try again

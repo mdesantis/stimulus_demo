@@ -1,16 +1,15 @@
-p
-| Se non ti sei già registrato su questo sito registrati
-=< link_to 'qui', new_user_path
-
-h2 Form di login
+h2 Sign in
 
 = form_with model: @user, url: create_user_session_path, local: true do |form|
   div
-    = form.label :email
-    = form.text_field :email
+    = form.email_field :email, required: true, placeholder: 'you@example.com'
   div
-    = form.label :password
-    = form.password_field :password
+    = form.password_field :password, required: true, placeholder: 'password'
 
   div
-    = form.submit
+    = form.submit 'Sign in'
+
+p
+  b> Don't have an account yet?
+  | Register
+  =< link_to 'here', new_user_path

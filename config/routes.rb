@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   post '/', to: 'user_sessions#create', as: :create_user_session
   delete '/signout', to: 'user_sessions#destroy', as: :destroy_user_session
 
-  resources :users, only: %i[index new create]
+  get  '/get-started', to: 'users#new', as: :new_user
+  post '/get-started', to: 'users#create', as: :users
 end
