@@ -31,6 +31,8 @@ gem 'slim'
 gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+# Update to 1.2 after upgrading to Ruby 2.5
+gem 'did_you_mean', '~> 1.1.2'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -62,4 +64,5 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+# Commenting to get rid of bundler warning about Windows platform support not included in this bundle
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
