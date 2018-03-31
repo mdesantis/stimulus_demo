@@ -65,4 +65,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 # Commenting to get rid of bundler warning about Windows platform support not included in this bundle
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+# gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
