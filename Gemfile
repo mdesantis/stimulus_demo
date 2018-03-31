@@ -33,6 +33,8 @@ gem 'redis', '~> 4.0'
 gem 'bcrypt', '~> 3.1.7'
 # Update to 1.2 after upgrading to Ruby 2.5
 gem 'did_you_mean', '~> 1.1.2'
+# Abort requests that are taking too long
+gem 'rack-timeout', group: :production
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
