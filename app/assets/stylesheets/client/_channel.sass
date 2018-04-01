@@ -1,0 +1,46 @@
+$channel-message-form-height: 50px
+$channel-message-created-at-text-color: #717274
+
+.channel
+  display: flex
+  flex-direction: column
+  height: 100vh
+  width: 100%
+
+.channel-messages
+  display: flex
+  flex-direction: column
+  height: calc(100% - #{$channel-message-form-height})
+  overflow-y: auto
+
+.channel-message
+  &:first-child
+    margin-top: auto
+
+.channel-message-header
+  +clearfix
+
+.channel-message-author-username
+  font-weight: bold
+
+.channel-message-author-username,
+.channel-message-created-at
+  float: left
+
+.channel-message-created-at
+  color: $channel-message-created-at-text-color
+  font-size: .75em
+  margin-left: 5px
+
+.channel-message-actions
+  float: right
+
+.channel-message-form
+  align-self: flex-end
+  height: $channel-message-form-height
+  width: 100%
+
+.channel-message-form-textarea
+  +textarea-100-percent-height
+  resize: none
+  width: 100%

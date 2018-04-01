@@ -1,0 +1,13 @@
+// Standard clearfix
+=clearfix
+  &::after
+    clear: both
+    content: ' '
+    display: table
+
+// Fixes textarea size bug on Chrome when textarea's height is 100%: content-box property is ignored causing textarea to
+// overflow container's height
+=textarea-100-percent-height($padding: 2px, $border-width: 1px)
+  border-width: $border-width
+  height: calc(100% - #{$border-width+$padding})
+  padding: $padding
