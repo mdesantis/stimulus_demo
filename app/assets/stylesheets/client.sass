@@ -7,6 +7,7 @@ $sidebar-text-color: #CAC4C9
 $sidebar-link-color: $sidebar-text-color
 $profile-name-text-color: #FFF
 $channel-message-form-height: 50px
+$channel-message-created-at-text-color: #717274
 $textarea-border-width: 1px !default
 $textarea-padding: 2px !default
 
@@ -72,8 +73,16 @@ $textarea-padding: 2px !default
   +clearfix
 
 .channel-message-author-username
-  float: left
   font-weight: bold
+
+.channel-message-author-username,
+.channel-message-created-at
+  float: left
+
+.channel-message-created-at
+  color: $channel-message-created-at-text-color
+  font-size: .75em
+  margin-left: 5px
 
 .channel-message-actions
   float: right
