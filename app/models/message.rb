@@ -5,16 +5,12 @@ class Message < ApplicationRecord
 
   validates_presence_of :text
 
-  after_commit :perform_message_created_job, on: :create
-  after_commit :perform_message_destroyed_job, on: :destroy
+  after_create_commit  { trigger_event 'create' }
+  after_destroy_commit { trigger_event 'destroy' }
 
   private
 
-  def perform_message_created_job
-    MessageCreatedJob.perform_later(self)
-  end
-
-  def perform_message_destroyed_job
-    MessageDestroyedJob.perform_now(self)
+  def trigger_event(event)
+    MessageEventJob.perform_later self, event
   end
 end
