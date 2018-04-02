@@ -1,3 +1,3 @@
 #channel-messages.channel-messages data={controller: 'channel-messages'}
-  = render Message.all.order(created_at: :asc)
+  = render @messages
 = render 'client/messages/form'
