@@ -1,9 +1,10 @@
-# Webpack packs
+# Rails assets and Webpacker packs
+public/assets
 public/packs
 public/packs-test
 
 # Uploaded files
 storage
 
-# Third party libraries manually added
+# Third party libraries
 vendor
