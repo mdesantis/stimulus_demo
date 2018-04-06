@@ -4,12 +4,6 @@ AllCops:
   - db/schema.rb
   - node_modules/**/*
 
-# Exclude migrations in order to allow table-style arguments alignment
-# https://github.com/bbatsov/rubocop/issues/5657
-Layout/ExtraSpacing:
-  Exclude:
-  - 'db/migrate/**'
-
 Metrics/LineLength:
   Max: 120
   Exclude:
