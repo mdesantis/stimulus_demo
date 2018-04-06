@@ -1,7 +1,9 @@
-= form_with model: Message.new,
+- message = Channel::Message.new(channel: @channel)
+
+= form_with model: message,
+            url: channel_messages_path(@channel, message),
             class: 'channel-message-form',
             data: { controller: 'message-form' } do |form|
   = form.text_area :text,
-                   id: nil,
                    class: 'channel-message-form-textarea',
                    placeholder: 'Scrivi un messaggio. Premi "Invio" per inviarlo, o "Shift+Invio" per andare a capo.'

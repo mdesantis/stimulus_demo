@@ -1,25 +1,27 @@
 class MessageEventJob < ApplicationJob
   queue_as :default
 
-  def perform(message, event)
-    send event, message
+  def perform(message_id, event)
+    send event, message_id
   end
 
   private
 
-  def create(message)
+  def create(message_id)
+    message = Channel::Message.find(message_id)
+
     ActionCable.server.broadcast(
       'client:messages',
       event: :create,
-      detail: { message: Client::MessagesController.render(message) }
+      detail: { message: Client::ChannelsController.render(message) }
     )
   end
 
-  def destroy(message)
+  def destroy(message_id)
     ActionCable.server.broadcast(
       'client:messages',
       event: :destroy,
-      detail: { messageId: message.id }
+      detail: { messageId: message_id }
     )
   end
 end

@@ -8,4 +8,4 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Channel.find_or_create_by! primary: true
+Channel.first_or_create_primary!

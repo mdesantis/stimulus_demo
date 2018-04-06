@@ -11,7 +11,7 @@ export default class extends ApplicationController {
   }
 
   textarea() {
-    return this.element.querySelector('[name="message[text]"]')
+    return this.element.querySelector('.channel-message-form-textarea')
   }
 
   submitFormOnEnter(event) {

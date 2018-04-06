@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_06_134158) do
+ActiveRecord::Schema.define(version: 2018_04_06_135006) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -42,7 +42,9 @@ ActiveRecord::Schema.define(version: 2018_04_06_134158) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "author_id"
+    t.bigint "channel_id"
     t.index ["author_id"], name: "index_channel_messages_on_author_id"
+    t.index ["channel_id"], name: "index_channel_messages_on_channel_id"
     t.index ["created_at"], name: "index_channel_messages_on_created_at"
   end
 
@@ -65,5 +67,6 @@ ActiveRecord::Schema.define(version: 2018_04_06_134158) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "channel_messages", "channels"
   add_foreign_key "channel_messages", "users", column: "author_id"
 end

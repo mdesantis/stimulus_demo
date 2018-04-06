@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   include Authentication
 
   def after_sign_in_path
-    channel_path
+    primary_channel_path
   end
 end

@@ -1,6 +1,7 @@
 class Channel < ApplicationRecord
   class Message < ApplicationRecord
     belongs_to :author, class_name: 'User'
+    belongs_to :channel
 
     delegate :username, to: :author, prefix: true
 
@@ -12,7 +13,7 @@ class Channel < ApplicationRecord
     private
 
     def trigger_event(event)
-      MessageEventJob.perform_later self, event
+      MessageEventJob.perform_later id, event
     end
   end
 end
