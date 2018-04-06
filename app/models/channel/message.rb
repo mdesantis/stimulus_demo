@@ -1,5 +1,7 @@
 class Channel < ApplicationRecord
   class Message < ApplicationRecord
+    PARTIAL_PATH = 'channels/messages/message'.freeze
+
     belongs_to :author, class_name: 'User'
     belongs_to :channel
 
@@ -9,6 +11,10 @@ class Channel < ApplicationRecord
 
     after_create_commit  { trigger_event 'create' }
     after_destroy_commit { trigger_event 'destroy' }
+
+    def to_partial_path
+      PARTIAL_PATH
+    end
 
     private
 
