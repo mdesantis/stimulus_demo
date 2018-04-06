@@ -14,8 +14,16 @@ $channel-message-created-at-text-color: #717274
   overflow-y: auto
 
 .channel-message
+  margin-top: 6px
+  padding-left: 34px
+  padding-right: 10px
+
   &:first-child
     margin-top: auto
+    padding-top: 9px
+
+  &:last-child
+    padding-bottom: 16px
 
 .channel-message-header
   +clearfix
@@ -30,6 +38,10 @@ $channel-message-created-at-text-color: #717274
 
 .channel-message-actions
   float: right
+
+.channel-message-text
+  p
+    margin: 0
 
 .channel-message-form
   align-self: flex-end

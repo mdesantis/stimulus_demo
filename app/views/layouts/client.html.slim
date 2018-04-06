@@ -7,7 +7,6 @@ html
     = javascript_pack_tag    'client'
   body
     .client
-      .sidebar
-        = render 'layouts/client/sidebar'
+      = render 'layouts/client/sidebar'
       .channel
         = yield
