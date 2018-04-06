@@ -1,4 +1,3 @@
-$channel-message-form-height: 50px
 $channel-message-created-at-text-color: #717274
 
 .channel
@@ -10,7 +9,7 @@ $channel-message-created-at-text-color: #717274
 .channel-messages
   display: flex
   flex-direction: column
-  height: calc(100% - #{$channel-message-form-height})
+  margin-top: auto
   overflow-y: auto
 
 .channel-message
@@ -51,10 +50,8 @@ $channel-message-created-at-text-color: #717274
 
 .channel-message-form
   align-self: flex-end
-  height: $channel-message-form-height
   width: 100%
 
 .channel-message-form-textarea
-  +textarea-100-percent-height
   resize: none
   width: 100%
