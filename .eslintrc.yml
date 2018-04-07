@@ -36,6 +36,8 @@ rules:
   - error
   -
     code: 120
+  no-debugger:
+  - warn
   no-unused-vars:
   - error
   -
