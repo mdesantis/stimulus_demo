@@ -13,3 +13,10 @@ podkova 153
 signika 175
 sofadi one 127
 yellowtail 123
+
+## Random user profile avatars
+
+- 36: image size in pixel
+- test@example.com: user identifier
+
+https://api.adorable.io/avatars/36/test@example.com.png
