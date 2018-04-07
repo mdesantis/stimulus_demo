@@ -9,6 +9,6 @@
     //   id: 'lato:n4,i4,n7,i7',
     //   api: '//use.edgefonts.net',
     // },
-    timeout: 200,
+    timeout: 500,
   })
 }).call(this)
