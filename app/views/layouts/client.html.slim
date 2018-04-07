@@ -4,7 +4,7 @@ html
     = render 'layouts/shared/head'
     = stylesheet_link_tag    'client', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'client', 'data-turbolinks-track': 'reload'
-    = javascript_pack_tag    'client'
+    = javascript_pack_tag    'client', 'data-turbolinks-track': 'reload'
   body
     .client
       = render 'layouts/client/sidebar'
