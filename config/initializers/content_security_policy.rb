@@ -9,7 +9,7 @@ Rails.application.config.content_security_policy do |policy|
   policy.font_src    :self, :https, :data
   policy.img_src     :self, :https, :data
   policy.object_src  :none
-  # policy.script_src :unsafe_inline can be removed after the following commit gets included:
+  # :unsafe_inline can be removed after the following commit gets included:
   # https://github.com/rails/rails/commit/b2f0a8945956cd92dec71ec4e44715d764990a49
   policy.script_src  :self, :https, :unsafe_inline
   policy.style_src   :self, :https, :unsafe_inline
@@ -23,7 +23,9 @@ Rails.application.config.content_security_policy do |policy|
 end
 
 # If you are using UJS then enable automatic nonce generation
-Rails.application.config.content_security_policy_nonce_generator = ->(_request) { SecureRandom.base64(16) }
+# This can be commented out after the following commit gets included:
+# https://github.com/rails/rails/commit/b2f0a8945956cd92dec71ec4e44715d764990a49
+# Rails.application.config.content_security_policy_nonce_generator = ->(_request) { SecureRandom.base64(16) }
 
 # Report CSP violations to a specified URI
 # For further information see the following documentation:
