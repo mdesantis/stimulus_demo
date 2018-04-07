@@ -13,6 +13,7 @@ Rails.application.config.content_security_policy do |policy|
   # https://github.com/rails/rails/commit/b2f0a8945956cd92dec71ec4e44715d764990a49
   policy.script_src  :self, :https, :unsafe_inline
   policy.style_src   :self, :https, :unsafe_inline
+  # Allow webpack-dev-server host as allowed origin for connect-src.
   policy.connect_src :self,
                      :https,
                      *(%w[http://localhost:3035 ws://localhost:3000 ws://localhost:3035] if Rails.env.development?)
