@@ -2,3 +2,11 @@
   .client-sidebar-header
     .profile-name = current_user.username
     .logout = link_to 'Sign out', destroy_user_session_path, method: :delete
+  .channels-list
+    .channels-list-title Channels
+    ul.channels-list-links
+      - Channel.order(primary: :desc).order(name: :asc).each do |channel|
+        - selected = current_page?(controller: 'client/channels', action: 'show', id: channel.id)
+        li = link_to channel.name,
+                     channel,
+                     class: ['channels-list-link', *(%w[selected] if selected)]

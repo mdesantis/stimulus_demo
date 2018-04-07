@@ -2,6 +2,7 @@ $sidebar-background-color: #4D394B
 $sidebar-text-color: #CAC4C9
 $sidebar-link-color: $sidebar-text-color
 $profile-name-text-color: #FFF
+$channels-list-link-background-color: #3E313C
 
 .client-sidebar
   background-color: $sidebar-background-color
@@ -19,4 +20,36 @@ $profile-name-text-color: #FFF
 
   .profile-name
     color: $profile-name-text-color
+    font-size: 1.05em
     font-weight: bold
+
+  .channels-list
+    padding-top: 18px
+
+  .channels-list-title
+    font-size: 1.05em
+    margin: 3px 0
+    padding: 0 12px 0 15px
+
+  .channels-list-links
+    +unstyled-list
+
+  .channels-list-link
+    display: inline-block
+    padding: 3px 12px 5px 15px
+    width: 100%
+
+    &::before
+      content: '# '
+      opacity: .64
+
+    &:link,
+    &:visited
+      text-decoration: none
+
+    &:hover
+      background-color: $channels-list-link-background-color
+
+    &.selected
+      background-color: #4C9689
+      color: #FFF
