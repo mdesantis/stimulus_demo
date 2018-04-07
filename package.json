@@ -2,7 +2,7 @@
   "name": "stimulus_demo",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "^3.4.1",
+    "@rails/webpacker": "3.4",
     "coffeescript": "1.12.7",
     "normalize.css": "^8.0.0",
     "stimulus": "^1.0.1",
@@ -16,7 +16,7 @@
     "eslint-plugin-import": "^2.8.0",
     "sass-lint": "^1.12.1",
     "webpack-cli": "^2.0.10",
-    "webpack-dev-server": "^2.11.2"
+    "webpack-dev-server": "^2.11.1"
   },
   "engines": {
     "node": "9.10.1",
