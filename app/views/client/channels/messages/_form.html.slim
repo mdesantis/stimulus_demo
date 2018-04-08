@@ -3,7 +3,7 @@
 = form_with model: message,
             url: channel_messages_path(@channel, message),
             class: 'channel-message-form',
-            data: { controller: 'message-form' } do |form|
+            data: { controller: 'client--channel--message-form' } do |form|
   = form.text_area :text,
                    class: 'channel-message-form-textarea',
                    placeholder: 'Jot something down'
