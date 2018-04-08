@@ -11,6 +11,11 @@ export default class extends ApplicationController {
   createMessage(event) {
     console.log('createMessage', event)
 
+    const { channelId } = this.channel().dataset
+    const messageChannelId = event.detail.message.channel_id.toString()
+
+    if (channelId !== messageChannelId) return
+
     const { views } = event.detail
     const channelMessagesEl = this.element
 
@@ -25,5 +30,9 @@ export default class extends ApplicationController {
     const element = this.element.querySelector(`.channel-message[data-message-id="${message.id}"]`)
 
     element.parentNode.removeChild(element)
+  }
+
+  channel() {
+    return this.element.closest('.channel')
   }
 }
