@@ -1,13 +1,11 @@
 import ApplicationController from 'controllers/application_controller'
 
 export default class extends ApplicationController {
-  static MESSAGE_EVENTS = ['create', 'destroy']
-
   connect() {
-    this.constructor.MESSAGE_EVENTS.forEach((eventName) => {
-      const listener = this[`${eventName}Message`]
-      this.addEventListener(document, `cable:client:messages:${eventName}`, listener)
-    })
+    this.addEventListeners(
+      [document, 'cable:client:messages:create', this.createMessage],
+      [document, 'cable:client:messages:destroy', this.destroyMessage],
+    )
   }
 
   createMessage(event) {

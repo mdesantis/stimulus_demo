@@ -1,6 +1,6 @@
 export default Base => class extends Base {
   initialize() {
-    this.listeners = []
+    this.eventListeners = []
 
     super.initialize()
   }
@@ -15,14 +15,18 @@ export default Base => class extends Base {
     const boundListener = listener.bind(this)
 
     element.addEventListener(eventName, boundListener)
-    this.listeners.push([element, eventName, boundListener])
+    this.eventListeners.push([element, eventName, boundListener])
+  }
+
+  addEventListeners(...eventListeners) {
+    eventListeners.forEach((eventListener) => { this.addEventListener(...eventListener) })
   }
 
   removeEventListeners() {
-    const { listeners } = this
+    const { eventListeners } = this
 
-    while (listeners.length) {
-      this.constructor.removeEventListener(...listeners.pop())
+    while (eventListeners.length) {
+      this.constructor.removeEventListener(...eventListeners.pop())
     }
   }
 

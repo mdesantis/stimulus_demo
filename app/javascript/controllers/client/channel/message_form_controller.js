@@ -2,8 +2,10 @@ import ApplicationController from 'controllers/application_controller'
 
 export default class extends ApplicationController {
   connect() {
-    this.addEventListener(this.element, 'ajax:success', this.ajaxSuccess)
-    this.addEventListener(this.textarea(), 'keyup', this.submitFormOnEnter)
+    this.addEventListeners(
+      [this.element, 'ajax:success', this.ajaxSuccess],
+      [this.textarea(), 'keyup', this.submitFormOnEnter],
+    )
   }
 
   ajaxSuccess(_event) {
