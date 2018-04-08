@@ -13,18 +13,18 @@ export default class extends ApplicationController {
   createMessage(event) {
     console.log('createMessage', event)
 
-    const { message } = event.detail
+    const { views } = event.detail
     const channelMessagesEl = this.element
 
-    channelMessagesEl.insertAdjacentHTML('beforeend', message)
+    channelMessagesEl.insertAdjacentHTML('beforeend', views.message)
     channelMessagesEl.scrollTop = channelMessagesEl.scrollHeight
   }
 
   destroyMessage(event) {
     console.log('destroyMessage', event)
 
-    const { messageId } = event.detail
-    const element = this.element.querySelector(`.channel-message[data-message-id="${messageId}"]`)
+    const { message } = event.detail
+    const element = this.element.querySelector(`.channel-message[data-message-id="${message.id}"]`)
 
     element.parentNode.removeChild(element)
   }

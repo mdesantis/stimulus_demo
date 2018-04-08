@@ -12,8 +12,7 @@ App.channel = App.cable.subscriptions.create('ClientChannel', {
   // Called when there's incoming data on the websocket for this channel
   received(data) {
     console.log('ClientChannel received', data)
-    const { event } = data
-    const { detail } = data
+    const { event, detail } = data
     const customEvent = new CustomEvent(`cable:client:messages:${event}`, { detail })
     document.dispatchEvent(customEvent)
   },

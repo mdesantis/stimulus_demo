@@ -13,7 +13,7 @@ class MessageEventJob < ApplicationJob
     ActionCable.server.broadcast(
       'client:messages',
       event: :create,
-      detail: { message: Client::ChannelsController.render(message) }
+      detail: { views: { message: Client::ChannelsController.render(message) } }
     )
   end
 
@@ -21,7 +21,7 @@ class MessageEventJob < ApplicationJob
     ActionCable.server.broadcast(
       'client:messages',
       event: :destroy,
-      detail: { messageId: message_id }
+      detail: { message: { id: message_id } }
     )
   end
 end
