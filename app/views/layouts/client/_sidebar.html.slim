@@ -9,4 +9,7 @@
         - selected = current_page?(controller: 'client/channels', action: 'show', id: channel.id)
         li = link_to channel.name,
                      channel,
-                     class: ['channels-list-link', *(%w[selected] if selected)]
+                     class: ['channels-list-link', *(%w[selected] if selected)],
+                     data: { controller: 'client--sidebar--channels-list-link',
+                             'channel-id': channel.id,
+                             action: 'client--sidebar--channels-list-link#switchChannel' }
