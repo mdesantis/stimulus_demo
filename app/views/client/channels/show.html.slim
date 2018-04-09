@@ -1,4 +1,4 @@
-.channel data={'channel-id': @channel.id}
+.channel data={controller: 'client--channel', 'channel-id': @channel.id}
   .channel-header
     .channel-name = "##{@channel.name}"
   .channel-messages data={controller: 'client--channel--messages'}

@@ -4,15 +4,15 @@ export default class extends ApplicationController {
   connect() {
     this.addEventListeners(
       [this.element, 'ajax:success', this.ajaxSuccess],
-      [this.textarea(), 'keyup', this.submitFormOnEnter],
+      [this.messageTextarea, 'keyup', this.submitFormOnEnter],
     )
   }
 
   ajaxSuccess(_event) {
-    this.textarea().value = ''
+    this.messageTextarea.value = ''
   }
 
-  textarea() {
+  get messageTextarea() {
     return this.element.querySelector('.channel-message-form-textarea')
   }
 

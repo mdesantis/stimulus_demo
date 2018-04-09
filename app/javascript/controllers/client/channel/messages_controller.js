@@ -11,7 +11,7 @@ export default class extends ApplicationController {
   createMessage(event) {
     console.log('createMessage', event)
 
-    const { channelId } = this.channel().dataset
+    const { channelId } = this.channelController
     const messageChannelId = event.detail.message.channel_id.toString()
 
     if (channelId !== messageChannelId) return
@@ -32,7 +32,7 @@ export default class extends ApplicationController {
     element.parentNode.removeChild(element)
   }
 
-  channel() {
-    return this.element.closest('.channel')
+  get channelController() {
+    return this.getController('.channel', 'client--channel')
   }
 }
