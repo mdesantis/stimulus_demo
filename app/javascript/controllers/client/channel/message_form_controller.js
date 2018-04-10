@@ -17,8 +17,12 @@ export default class extends ApplicationController {
   }
 
   submitFormOnEnter(event) {
-    if (event.keyCode === 13 && !event.shiftKey) {
+    if (this.constructor.isShiftEnter(event)) {
       Rails.fire(this.element, 'submit')
     }
+  }
+
+  static isShiftEnter(event) {
+    return event.keyCode === 13 && !event.shiftKey
   }
 }
