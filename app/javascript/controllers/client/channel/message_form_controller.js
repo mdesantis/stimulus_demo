@@ -18,7 +18,8 @@ export default class extends ApplicationController {
 
   submitFormOnEnter(event) {
     if (this.constructor.isShiftEnter(event)) {
-      Rails.fire(this.element, 'submit')
+      // Rails.fire(this.element, 'submit')
+      App.channels.client_channels_messages.create()
     }
   }
 

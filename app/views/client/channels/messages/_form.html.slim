@@ -2,8 +2,10 @@
 
 = form_with model: message,
             url: channel_messages_path(@channel, message),
+            id: 'channel-message-form',
             class: 'channel-message-form',
             data: { controller: 'client--channel--message-form' } do |form|
+  = form.hidden_field :channel_id
   = form.text_area :text,
                    class: 'channel-message-form-textarea',
                    placeholder: 'Jot something down'
