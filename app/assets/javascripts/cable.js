@@ -8,4 +8,5 @@
 
 (function createActionCableConsumer() {
   this.App.cable = ActionCable.createConsumer()
+  this.App.channels = {}
 }).call(this)

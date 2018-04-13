@@ -23,7 +23,7 @@ module.exports = {
     },
     {
       "files": [
-        "app/assets/javascripts/cable/cable.js"
+        "app/assets/javascripts/cable.js"
       ],
       "globals": {
         "ActionCable": false

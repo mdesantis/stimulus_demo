@@ -1,4 +1,4 @@
-App.channel = App.cable.subscriptions.create('ClientChannel', {
+App.channels.client = App.cable.subscriptions.create('ClientChannel', {
   // Called when the subscription is ready for use on the server
   connected() {
     console.log('ClientChannel connected')

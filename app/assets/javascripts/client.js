@@ -11,4 +11,4 @@
 // about supported directives.
 //
 //= require shared/all
-//= require ./cable/cable
+//= require ./cable
