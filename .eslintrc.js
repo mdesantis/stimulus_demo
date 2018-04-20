@@ -18,7 +18,8 @@ module.exports = {
       },
       "globals": {
         "App": false,
-        "Rails": false
+        "Rails": false,
+        "Turbolinks": false
       }
     },
     {
