@@ -9,11 +9,9 @@ Rails.application.routes.draw do
   get  '/get-started', to: 'users#new', as: :new_user
   post '/get-started', to: 'users#create', as: :users
 
+  get 'channels/primary', to: 'client/channels#primary', as: :primary_channel
+  post 'channels/messages', to: 'client/channels/messages#create', as: :channel_messages
   resources :channels, only: %i[index show], controller: 'client/channels' do
-    resources :messages, only: %i[create destroy], controller: 'client/channels/messages'
-  end
-
-  direct :primary_channel do |options|
-    options.merge controller: 'client/channels', action: 'show', id: 'primary'
+    resources :messages, only: %i[destroy], controller: 'client/channels/messages'
   end
 end
