@@ -4,8 +4,11 @@ $channel-message-created-at-text-color: #717274
 .channel
   display: flex
   flex-direction: column
-  height: 100vh
-  width: 100%
+  height: 100%
+  overflow-y: auto
+
+  &.cached-channel
+    display: none
 
 .channel-header
   border-bottom: 1px solid $channel-header-border-color
@@ -18,8 +21,6 @@ $channel-message-created-at-text-color: #717274
     padding-left: 1.3rem
 
 .channel-messages
-  display: flex
-  flex-direction: column
   margin-top: auto
   overflow-y: auto
 
@@ -29,7 +30,6 @@ $channel-message-created-at-text-color: #717274
   padding-right: 10px
 
   &:first-child
-    margin-top: auto
     padding-top: 9px
 
   &:last-child
