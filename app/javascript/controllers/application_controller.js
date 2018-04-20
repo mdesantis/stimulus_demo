@@ -1,10 +1,12 @@
 import { Controller } from 'stimulus'
-import Mixins from 'utils/class/mixins'
-import EventListenersMixin from 'controllers/mixins/event_listeners_mixin'
-import GetControllerMixin from 'controllers/mixins/get_controller_mixin'
+import Mixin from 'utils/class/mixin'
+import EventListeners from 'controllers/mixins/event_listeners'
+import GetController from 'controllers/mixins/get_controller_mixin'
 
-export default class extends Mixins(
+export default class extends Mixin(
   Controller,
-  EventListenersMixin,
-  GetControllerMixin,
+  [
+    EventListeners,
+    GetController,
+  ],
 ) {}

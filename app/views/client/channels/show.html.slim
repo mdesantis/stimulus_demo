@@ -1,6 +1,7 @@
-.channel data={controller: 'client--channel', 'channel-id': @channel.id}
+.channel data={ controller: 'client--channel',
+                'client--channel-id': @channel.id,
+                'client--channel-current': 'true' }
   .channel-header
     .channel-name = "##{@channel.name}"
   .channel-messages data={controller: 'client--channel--messages'}
     = render @messages
-  = render 'client/channels/messages/form'

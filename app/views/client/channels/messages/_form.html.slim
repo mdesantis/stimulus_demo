@@ -1,9 +1,11 @@
 - message = Channel::Message.new(channel: @channel)
 
 = form_with model: message,
-            url: channel_messages_path(@channel, message),
+            url: channel_messages_path(message),
             class: 'channel-message-form',
             data: { controller: 'client--channel--message-form' } do |form|
+  = form.hidden_field :channel_id, data: { target: 'client--channel--message-form.channelId' }
   = form.text_area :text,
                    class: 'channel-message-form-textarea',
-                   placeholder: 'Jot something down'
+                   placeholder: 'Jot something down',
+                   data: { target: 'client--channel--message-form.message' }

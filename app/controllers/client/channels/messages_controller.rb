@@ -1,10 +1,10 @@
 module Client
   module Channels
     class MessagesController < ApplicationController
-      before_action :require_sign_in, :find_channel
+      before_action :require_sign_in
 
       def create
-        @message = @channel.messages.build(message_params.merge(author: current_user))
+        @message = Channel::Message.new(message_params.merge(author: current_user))
 
         if @message.save
           head :created
@@ -14,6 +14,7 @@ module Client
       end
 
       def destroy
+        @channel = Channel.find(params[:channel_id])
         @channel.messages.find(params[:id]).destroy
 
         head :no_content
@@ -21,13 +22,9 @@ module Client
 
       private
 
-      def find_channel
-        @channel = Channel.find(params[:channel_id])
-      end
-
       # Never trust parameters from the scary internet, only allow the white list through.
       def message_params
-        params.require(:channel_message).permit(:text)
+        params.require(:channel_message).permit(:channel_id, :text)
       end
     end
   end

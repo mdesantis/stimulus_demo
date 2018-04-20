@@ -11,11 +11,11 @@ export default Base => class extends Base {
     super.disconnect()
   }
 
-  addEventListener(element, eventName, listener) {
+  addEventListener(element, eventName, listener, options) {
     const boundListener = listener.bind(this)
 
-    element.addEventListener(eventName, boundListener)
-    this.eventListeners.push([element, eventName, boundListener])
+    element.addEventListener(eventName, boundListener, options)
+    this.eventListeners.push([element, eventName, boundListener, options])
   }
 
   addEventListeners(...eventListeners) {

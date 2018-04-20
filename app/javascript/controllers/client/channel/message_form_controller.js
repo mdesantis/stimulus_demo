@@ -1,28 +1,26 @@
 import ApplicationController from 'controllers/application_controller'
 
 export default class extends ApplicationController {
+  static targets = ['channelId', 'message']
+
   connect() {
     this.addEventListeners(
+      [this.messageTarget, 'keyup', this.submitFormOnEnter],
       [this.element, 'ajax:success', this.ajaxSuccess],
-      [this.messageTextarea, 'keyup', this.submitFormOnEnter],
     )
   }
 
   ajaxSuccess(_event) {
-    this.messageTextarea.value = ''
-  }
-
-  get messageTextarea() {
-    return this.element.querySelector('.channel-message-form-textarea')
+    this.messageTarget.value = ''
   }
 
   submitFormOnEnter(event) {
-    if (this.constructor.isShiftEnter(event)) {
+    if (this.constructor.isEnter(event)) {
       Rails.fire(this.element, 'submit')
     }
   }
 
-  static isShiftEnter(event) {
+  static isEnter(event) {
     return event.keyCode === 13 && !event.shiftKey
   }
 }

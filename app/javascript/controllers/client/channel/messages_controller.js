@@ -9,7 +9,7 @@ export default class extends ApplicationController {
   }
 
   createMessage(event) {
-    console.log('createMessage', event)
+    // console.log('createMessage', event)
 
     const { channelId } = this.channelController
     const messageChannelId = event.detail.message.channel_id.toString()
@@ -24,7 +24,7 @@ export default class extends ApplicationController {
   }
 
   destroyMessage(event) {
-    console.log('destroyMessage', event)
+    // console.log('destroyMessage', event)
 
     const { message } = event.detail
     const element = this.element.querySelector(`.channel-message[data-message-id="${message.id}"]`)
@@ -33,6 +33,6 @@ export default class extends ApplicationController {
   }
 
   get channelController() {
-    return this.getController('.channel', 'client--channel')
+    return this.getControllerForElement(this.element.closest('[data-controller="client--channel"]'))
   }
 }
