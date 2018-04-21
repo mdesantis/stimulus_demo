@@ -1,3 +1,3 @@
 # TODO
 
-* Add slim linter https://github.com/sds/slim-lint
+* Update to Ruby 2.5
