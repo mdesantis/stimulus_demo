@@ -8,6 +8,8 @@ export default class extends ApplicationController {
   }
 
   connect() {
+    super.connect()
+
     this.addEventListeners(
       [this.element, 'ajax:before', this.visitChannel],
       [this.element, 'ajax:success', this.visitUncachedChannel],

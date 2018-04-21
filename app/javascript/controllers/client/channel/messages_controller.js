@@ -2,6 +2,8 @@ import ApplicationController from 'controllers/application_controller'
 
 export default class extends ApplicationController {
   connect() {
+    super.connect()
+
     this.addEventListeners(
       [document, 'cable:client:messages:create', this.createMessage],
       [document, 'cable:client:messages:destroy', this.destroyMessage],
@@ -9,8 +11,6 @@ export default class extends ApplicationController {
   }
 
   createMessage(event) {
-    // console.log('createMessage', event)
-
     const { channelId } = this.channelController
     const messageChannelId = event.detail.message.channel_id.toString()
 
@@ -24,8 +24,6 @@ export default class extends ApplicationController {
   }
 
   destroyMessage(event) {
-    // console.log('destroyMessage', event)
-
     const { message } = event.detail
     const element = this.element.querySelector(`.channel-message[data-message-id="${message.id}"]`)
 

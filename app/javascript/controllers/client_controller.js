@@ -1,14 +1,6 @@
 import ApplicationController from 'controllers/application_controller'
 
 export default class extends ApplicationController {
-  connect() {
-    console.log('ClientController connected', this.element)
-  }
-
-  disconnect() {
-    console.log('ClientController disconnected', this)
-  }
-
   channelElement(options) {
     const controller = this.channelController(options)
     return controller ? controller.element : null

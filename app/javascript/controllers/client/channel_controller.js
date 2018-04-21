@@ -2,17 +2,9 @@ import ApplicationController from 'controllers/application_controller'
 
 export default class extends ApplicationController {
   connect() {
-    console.log('ClientChannelController connected', this.element)
-  }
-
-  initialize() {
-    super.initialize()
+    super.connect()
 
     this.current = this.current // LOL
-  }
-
-  disconnect() {
-    console.log('ClientChannelController disconnected', this)
   }
 
   get channelId() {
@@ -27,12 +19,13 @@ export default class extends ApplicationController {
     if (value) {
       this.element.classList.add('current-channel')
       this.element.classList.remove('cached-channel')
-      this.getControllerForIdentifier('client--channel--message-form').channelIdTarget.value = this.channelId
     } else {
       this.element.classList.remove('current-channel')
       this.element.classList.add('cached-channel')
     }
 
     this.data.set('current', value)
+
+    this.dispatchControllerEvent('change:current', { controller: this })
   }
 }
