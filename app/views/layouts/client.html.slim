@@ -6,7 +6,7 @@ html
     = javascript_include_tag 'client', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag    'client', 'data-turbolinks-track': 'reload'
   body
-    .client data={controller: 'client'}
+    .client data={ controller: 'client' }
       = render 'layouts/client/sidebar'
       .client-main
         = yield

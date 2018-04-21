@@ -6,11 +6,12 @@
     .channels-list-title Channels
     ul.channels-list-links
       - Channel.order(primary: :desc).order(name: :asc).each do |channel|
+        - current_page = current_page?(controller: 'client/channels', action: 'show', id: channel.id).to_s
         li = link_to channel.name,
                      channel,
                      class: 'channels-list-link',
                      data: { controller: 'client--sidebar--channels-list-link',
                              'client--sidebar--channels-list-link-channel-id': channel.id,
-                             'client--sidebar--channels-list-link-selected': current_page?(controller: 'client/channels', action: 'show', id: channel.id).to_s,
+                             'client--sidebar--channels-list-link-selected': current_page,
                              'disable-with': channel.name },
                      remote: true
