@@ -25,3 +25,4 @@ https://api.adorable.io/avatars/36/test@example.com.png
 
 - actioncable: si sente la mancanza di actioncontroller
 - stimulus: le data action mi sembrano una bad practice
+- stimulus: qual è la differenza tra connect e initialized
