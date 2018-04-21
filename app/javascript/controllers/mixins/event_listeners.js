@@ -1,14 +1,14 @@
 export default Base => class extends Base {
-  initialize() {
+  connect() {
     this.eventListeners = []
 
-    super.initialize()
+    super.connect()
   }
 
   disconnect() {
-    this.removeEventListeners()
-
     super.disconnect()
+
+    this.removeEventListeners()
   }
 
   addEventListener(element, eventName, listener, options) {
