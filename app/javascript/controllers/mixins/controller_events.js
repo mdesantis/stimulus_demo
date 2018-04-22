@@ -1,5 +1,6 @@
 export default Base => class extends Base {
-  dispatchControllerEvent(eventName, detail = {}) {
+  dispatchControllerEvent(eventName, data = {}) {
+    const detail = Object.assign({ controller: this }, data)
     const customEvent = new CustomEvent(`stimulus:${this.identifier}:${eventName}`, { detail })
     document.dispatchEvent(customEvent)
   }

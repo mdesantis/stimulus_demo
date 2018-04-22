@@ -11,8 +11,8 @@ export default class extends ApplicationController {
     super.connect()
 
     this.addEventListeners(
-      [this.element, 'ajax:before', this.visitChannel],
-      [this.element, 'ajax:success', this.visitUncachedChannel],
+      [this.element, 'ajax:before', this.selectChannel],
+      [this.element, 'ajax:success', this.selectChannelUncached],
     )
   }
 
@@ -22,6 +22,7 @@ export default class extends ApplicationController {
 
   set selected(value) {
     if (value) {
+      this.resetSelected()
       this.element.classList.add('selected')
     } else {
       this.element.classList.remove('selected')
@@ -30,17 +31,13 @@ export default class extends ApplicationController {
     this.data.set('selected', value)
   }
 
-  visitUncachedChannel(event) {
-    const newChannelElement = event.detail[0].querySelector('[data-controller="client--channel"]')
-    this.clientController.visitUncachedChannel(this.channelId, newChannelElement)
+  selectChannelUncached(event) {
+    const channelElement = event.detail[0].querySelector('[data-controller="client--channel"]')
+    this.changeSelected({ channelId: this.channelId, channelElement })
   }
 
   get channelId() {
     return this.data.get('channel-id')
-  }
-
-  get clientController() {
-    return this.getControllerForIdentifier('client')
   }
 
   resetSelected() {
@@ -50,21 +47,25 @@ export default class extends ApplicationController {
     })
   }
 
-  visited() {
-    this.resetSelected()
-    this.selected = true
-    Turbolinks.changeURL(this.element.href)
+  get cachedChannelExists() {
+    return this.getControllerForIdentifierAndData('client--channel', { id: this.channelId, current: false }) !== null
   }
 
-  visitChannel(event) {
-    if (this.clientController.isCurrentChannel(this.channelId)) {
+  changeSelected(eventDetails) {
+    this.selected = true
+    Turbolinks.changeURL(this.element.href)
+    this.dispatchControllerEvent('change:selected', eventDetails)
+  }
+
+  selectChannel(event) {
+    if (this.selected) {
       event.preventDefault()
       return
     }
 
-    if (this.clientController.cachedChannelPresent(this.channelId)) {
+    if (this.cachedChannelExists) {
       event.preventDefault()
-      this.clientController.visitCachedChannel(this.channelId)
+      this.changeSelected({ channelId: this.channelId })
     }
   }
 }

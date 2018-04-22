@@ -8,6 +8,12 @@ export default class extends ApplicationController {
       [document, 'cable:client:messages:create', this.createMessage],
       [document, 'cable:client:messages:destroy', this.destroyMessage],
     )
+
+    this.scrollToBottom()
+  }
+
+  scrollToBottom() {
+    this.element.scrollTop = this.element.scrollHeight
   }
 
   createMessage(event) {
@@ -17,10 +23,9 @@ export default class extends ApplicationController {
     if (channelId !== messageChannelId) return
 
     const { views } = event.detail
-    const channelMessagesEl = this.element
 
-    channelMessagesEl.insertAdjacentHTML('beforeend', views.message)
-    channelMessagesEl.scrollTop = channelMessagesEl.scrollHeight
+    this.element.insertAdjacentHTML('beforeend', views.message)
+    this.scrollToBottom()
   }
 
   destroyMessage(event) {

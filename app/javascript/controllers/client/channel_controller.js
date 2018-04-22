@@ -5,6 +5,14 @@ export default class extends ApplicationController {
     super.connect()
 
     this.current = this.current // LOL
+
+    this.addEventListener(
+      ...this.controllerEventListener('client--sidebar--channels-list-link', 'change:selected', this.select),
+    )
+  }
+
+  select(event) {
+    this.current = event.detail.channelId === this.channelId
   }
 
   get channelId() {
@@ -26,6 +34,6 @@ export default class extends ApplicationController {
 
     this.data.set('current', value)
 
-    this.dispatchControllerEvent('change:current', { controller: this })
+    this.dispatchControllerEvent('change:current', { current: this.current })
   }
 }

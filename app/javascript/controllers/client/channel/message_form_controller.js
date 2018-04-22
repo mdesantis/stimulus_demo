@@ -14,6 +14,7 @@ export default class extends ApplicationController {
   }
 
   updateChannelId(event) {
+    if (!event.detail.current) return
     this.channelIdTarget.value = event.detail.controller.channelId
   }
 
