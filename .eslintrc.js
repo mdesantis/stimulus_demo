@@ -40,6 +40,10 @@ module.exports = {
       "error",
       "always"
     ],
+    "function-paren-newline": [
+      "error",
+      "consistent"
+    ],
     "indent": [
       "error",
       2
