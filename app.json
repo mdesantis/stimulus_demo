@@ -19,5 +19,8 @@
     { "url": "heroku/nodejs" },
     { "url": "heroku/ruby" }
   ],
-  "addons": ["heroku-postgresql", "rediscloud"]
+  "addons": ["heroku-postgresql", "rediscloud"],
+  "scripts": {
+    "postdeploy": "bundle exec rake db:setup"
+  }
 }
