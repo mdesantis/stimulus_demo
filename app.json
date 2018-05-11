@@ -21,6 +21,6 @@
   ],
   "addons": ["heroku-postgresql", "rediscloud"],
   "scripts": {
-    "postdeploy": "bundle exec rake db:setup"
+    "postdeploy": "bundle exec rake db:schema:load && bundle exec rake db:seed"
   }
 }
