@@ -1,0 +1,19 @@
+{
+  "name": "Stimulus.js Demo",
+  "description": "A web chat app made using Rails and Stimulus.js",
+  "repository": "https://github.com/mdesantis/stimulus_demo",
+  "logo": "https://cdn.rawgit.com/stimulusjs/stimulus/b8909b6d/assets/logo.svg",
+  "keywords": ["rails", "stimulusjs"],
+  "website": "https://github.com/mdesantis/stimulus_demo",
+  "env": {
+    "LANG": "en_US.UTF-8",
+    "RACK_ENV": "production",
+    "RAILS_ENV": "production",
+    "RAILS_LOG_TO_STDOUT": "enabled",
+    "RAILS_SERVE_STATIC_FILES": "enabled",
+    "SECRET_KEY_BASE": {
+      "generator": "secret"
+    }
+  },
+  "addons": ["heroku-postgresql", "rediscloud"]
+}
