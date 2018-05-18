@@ -1,5 +1,7 @@
 $channel-header-border-color: #E8E8E8
 $channel-message-created-at-text-color: #717274
+$channel-message-form-border-color: #A0A0A2B3
+$channel-message-form-border-color-focus: #717274
 
 .channel
   display: flex
@@ -49,7 +51,24 @@ $channel-message-created-at-text-color: #717274
 .channel-message-actions
   float: right
 
-.channel-message-text
+.channel-message-form
+  align-self: flex-end
+  padding: 0 22px 22px
+  width: 100%
+
+.channel-message-form-text
+  border: 2px solid $channel-message-form-border-color
+  border-radius: .375rem
+
+  &.focus
+    border-color: $channel-message-form-border-color-focus
+
+  .ql-editor
+    outline: 0
+    padding: 9px
+
+.channel-message-text,
+.channel-message-form-text
   p
     margin: 2px 0
 
@@ -58,11 +77,3 @@ $channel-message-created-at-text-color: #717274
 
     &:last-child
       margin-bottom: 0
-
-.channel-message-form
-  align-self: flex-end
-  width: 100%
-
-.channel-message-form-text
-  resize: none
-  width: 100%
