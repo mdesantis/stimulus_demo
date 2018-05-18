@@ -1,13 +1,13 @@
 import ApplicationController from 'controllers/application_controller'
 
 export default class extends ApplicationController {
-  static targets = ['channelId', 'message']
+  static targets = ['channelId', 'text']
 
   connect() {
     super.connect()
 
     this.addEventListeners(
-      [this.messageTarget, 'keyup', this.submitFormOnEnter],
+      [this.textTarget, 'keyup', this.submitFormOnEnter],
       [this.element, 'ajax:success', this.ajaxSuccess],
       this.controllerEventListener('client--channel', 'change:current', this.updateChannelId),
     )
@@ -19,7 +19,7 @@ export default class extends ApplicationController {
   }
 
   ajaxSuccess(_event) {
-    this.messageTarget.value = ''
+    this.textTarget.value = ''
   }
 
   submitFormOnEnter(event) {

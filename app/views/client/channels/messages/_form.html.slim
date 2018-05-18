@@ -6,6 +6,6 @@
             data: { controller: 'client--channel--message-form' } do |form|
   = form.hidden_field :channel_id, data: { target: 'client--channel--message-form.channelId' }
   = form.text_area :text,
-                   class: 'channel-message-form-textarea',
+                   class: 'channel-message-form-text',
                    placeholder: 'Jot something down',
-                   data: { target: 'client--channel--message-form.message' }
+                   data: { target: 'client--channel--message-form.text' }
