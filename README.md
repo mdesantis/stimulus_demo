@@ -2,7 +2,7 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-This is a Slack look-and-feel web chat using [Ruby on Rails](https://rubyonrails.org/) 5.2 and
+This is a web chat using [Ruby on Rails](https://rubyonrails.org/) 5.2 and
 [Stimulus](https://stimulusjs.org/) 1.0.
 
 ## Thanks to
